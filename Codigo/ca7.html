@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Escena 1</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      font-family: sans-serif;
+    }
+
+    .tour-page {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .panorama-container img {
+      width: 900px;       /* ancho fijo */
+      height: 500px;      /* alto fijo */
+      object-fit: cover;  /* recorta para llenar el espacio */
+      border: 2px solid #ccc;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+
+    .nav-buttons {
+      margin-top: 20px;
+      display: grid;
+      grid-template-areas:
+        ". forward ."
+        "left . right"
+        ". back .";
+      grid-gap: 10px;
+    }
+
+    .nav-buttons a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #444;
+      padding: 0.6em 1em;
+      font-size: 1rem;
+      border-radius: 5px;
+      text-align: center;
+    }
+
+    .forward { grid-area: forward; }
+    .back    { grid-area: back; }
+    .left    { grid-area: left; }
+    .right   { grid-area: right; }
+  </style>
+</head>
+<body class="tour-page">
+
+  <div class="panorama-container">
+    <img src="imagenes/ca7.jpg" alt="Escena 1">
+  </div>
+
+  <div class="nav-buttons">
+    <a class="forward" href="">Adelante</a>
+    <a class="left"    href="">Izquierda</a>
+    <a class="right"   href="">Derecha</a>
+    <a class="back"    href="ca7r.html">Atrás</a>
+  </div>
+
+
+</body>
+</html>
