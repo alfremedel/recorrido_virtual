@@ -20,11 +20,17 @@
     }
 
     .panorama-container img {
-      width: 900px;       /* ancho fijo */
-      height: 500px;      /* alto fijo */
-      object-fit: cover;  /* recorta para llenar el espacio */
+      width: 900px;
+      height: 500px;
+      object-fit: cover;
       border: 2px solid #ccc;
       box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      transition: all 0.6s ease-in;
+    }
+
+    .advance {
+      transform: scale(0.8) translateY(-120px);
+      opacity: 0.7;
     }
 
     .nav-buttons {
@@ -60,11 +66,22 @@
   </div>
 
   <div class="nav-buttons">
-    <a class="forward" href="pas1.html">Adelante</a>
+    <a class="forward" href="pas1.html" onclick="return animateTransition(event)">Adelante</a>
     <a class="left"    href="">Izquierda</a>
     <a class="right"   href="">Derecha</a>
     <a class="back"    href="ent1r.html">Atrás</a>
   </div>
+
+  <script>
+    function animateTransition(event) {
+      event.preventDefault();
+      const img = document.querySelector('.panorama-container img');
+      img.classList.add('advance');
+      setTimeout(() => {
+        window.location.href = event.target.href;
+      }, 600);
+    }
+  </script>
 
 </body>
 </html>
